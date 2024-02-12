@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Rotating Banner */
+.marquee {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    gap: 2rem;
+    position: relative;
+    padding: 2rem;
+}
+
+.marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    gap: 2rem;
+}
+
+.scroll {
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+      0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - 2rem));
+    }
+}
+
+/* The slider */
+.slidecontainer {
+    width: 100%;
+  }
+  
+.slider {
+    width: 100%; 
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 25%;
+    background-color: #ccc;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .sidebar.active{
+    width: 100px;
+    height: 40px;
+  }
+
+  .controls{
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .controls.active{
+    opacity: 0;
+  }

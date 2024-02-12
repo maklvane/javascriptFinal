@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!-- Final project for Alan Johnson SMC/Javascript 2024-->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="jquery-3.7.1.js"></script>
+    <title>Banner Builder</title>
+  </head>
+
+  <!-- On load body will check for previous edits-->
+  <body onload="checkEdits()">
+
+    <!-- Start Sidebar -->
+    <div class="sidebar">
+      <!-- Button -->
+      <p id="xBtn" style="text-align: right;">Controls <span id="closeOpen">X</span></p>
+      <!-- Inner Controls-->
+      <div class="controls">
+        <h1>Banner Builder</h1><br>
+        <!--Text Inputs-->
+        <form>
+          <label for="textInput">Add text here</label>  <br>
+          <textarea type="text" id="textInput" style="height:80px; width:100%;" placeholder="Sample Text"></textarea> <br><br>
+          <label for="textInput">Choose a symbol as a divider. <span style="font-style: italic;"> you can copy in emojis too </span></label>  <br>
+          <input type="text" name="divider" id="divider" style="width: 100%;" value="•"> 
+        </form><br>
+        <!-- Change banner controls-->
+        <!--Speed Slider-->
+        <div class="slidecontainer">
+          <label for="myRange">Scrolling Speed</label>
+          <input type="range" min="8000" max="9999" value="8000" class="slider" id="myRange">
+          <div id="viewScrollSpeed"></div>
+        </div><br>
+        <!--Font Size Slider-->
+        <div class="slidecontainer">
+          <label for="fontSlider">Font Size</label>
+          <input type="range" min="1" max="200" value="30" class="slider" id="fontSlider">
+          <div id="viewFontSize"></div>
+        </div><br>
+        <!--Color picker-->
+        <label for="colorpicker">Background Color:</label>
+        <input type="color" id="colorpicker" value="#ffffff"> <br> <br>
+        
+        <label for="fontColorpicker">Font Color:</label>
+        <input type="color" id="fontColorpicker" value="#00000"> <br><br>
+          <!--Font picker (no style)-->
+        <form>
+          <label for="fonts"> Font Selection: </label>
+          <select id="fonts" name="fonts">
+            <option value="helvetica"> Helvetica </option>
+            <option value="georgia">Georgia </option>
+            <option value="Lucida"> Lucida </option>
+          </select>
+        </form>
+      </div>
+    </div>
+     <!-- End Sidebar -->
+
+    <!-- Rotating banner from form -->
+    <div class="marquee">
+      <div class="marquee-content scroll">
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+      </div>
+      <div class="marquee-content scroll">
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+        <h1 class="inputtedText"></h1>
+        <h1 class="divider"></h1>
+      </div>      
+    </div>
+    <!--link to javascript file-->
+    <script src="bannerBuilder.js"></script>
+  </body>
+</html>
